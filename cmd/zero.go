@@ -10,17 +10,17 @@ func Add(args []float64) float64 {
 	result := 0.0
 
 	for _, i := range args {
-		result += i
+		result = result + i
 	}
 
 	return result
 }
 
 func Subtract(args []float64) float64 {
-	result := 0.0
+	result := args[0]
 
-	for _, i := range args {
-		result -= i
+	for i := 1; i < len(args); i++ {
+		result = result - args[i]
 	}
 	return result
 }
@@ -29,24 +29,18 @@ func Multiply(args []float64) float64 {
 	result := 1.0
 
 	for _, i := range args {
-		result *= i
+		result = result * i
 	}
 	return result
 }
 
-func Divide(args []string) float64 {
-	result := 0.0
+func Divide(args []float64) float64 {
+	result := args[0]
 
-	values, err := getValues(args)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Oops. An error while executing subcommands '%s'\n", err)
-	}
-
-	for _, i := range values {
-		result /= i
+	for i := 1; i < len(args); i++ {
+		result = result / args[i]
 	}
 	return result
-
 }
 
 func getValues(args []string) ([]float64, error) {
