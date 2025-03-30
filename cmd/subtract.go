@@ -10,16 +10,16 @@ import (
 var subtractCmd = &cobra.Command{
 	Use:     "sub",
 	Aliases: []string{"subtract"},
-	Short:   "Subtract multiple numbers",
+	Short:   "Subtracts multiple numbers",
 	Long: `Carry out a subtraction operation on the numbers provided. 
-Subtract all the numbers together and prints out the result. Only numerical values are allowed.`,
+Subtracts all the numbers together and prints out the result. Only numerical values are allowed.`,
 	Example: `zero sub 20.5 30 50 70
 zero subtract --file data.json
 zero sub -- 10 5 -20 20`,
-	Run: subRun,
+	Run: subtractRun,
 }
 
-func subRun(cmd *cobra.Command, args []string) {
+func subtractRun(cmd *cobra.Command, args []string) {
 	result := 0.0
 
 	if file != "" && len(args) > 0 {

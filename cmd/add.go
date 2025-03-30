@@ -12,7 +12,7 @@ var file string
 var addCmd = &cobra.Command{
 	Use:     "add",
 	Aliases: []string{"addition"},
-	Short:   "Add multiple numbers",
+	Short:   "Adds multiple numbers",
 	Long: `Carry out an addition operation on the numbers provided. 
 Adds all the numbers together and prints out the result. Only numerical values are allowed.`,
 	Example: `zero add 20.5 30 50 70
