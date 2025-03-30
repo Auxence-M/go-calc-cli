@@ -25,15 +25,10 @@ func Subtract(args []float64) float64 {
 	return result
 }
 
-func Multiply(args []string) float64 {
-	result := 0.0
+func Multiply(args []float64) float64 {
+	result := 1.0
 
-	values, err := getValues(args)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Oops. An error while executing subcommands '%s'\n", err)
-	}
-
-	for _, i := range values {
+	for _, i := range args {
 		result *= i
 	}
 	return result
