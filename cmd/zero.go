@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"math"
 	"os"
 	"strconv"
 )
@@ -45,6 +46,27 @@ func Divide(args []float64) float64 {
 
 func Mean(args []float64) float64 {
 	return Add(args) / float64(len(args))
+}
+
+func Variance(args []float64) float64 {
+	var meanDev []float64
+
+	mean := Mean(args)
+	for _, i := range args {
+		val := math.Abs(i - mean)
+		meanDev = append(meanDev, math.Pow(val, 2))
+	}
+
+	result := Add(meanDev) / float64(len(args)-1)
+
+	return result
+}
+
+func StandardDeviation(args []float64) float64 {
+
+	result := math.Sqrt(Variance(args))
+
+	return result
 }
 
 func getValues(args []string) ([]float64, error) {
