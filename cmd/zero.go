@@ -43,6 +43,10 @@ func Divide(args []float64) float64 {
 	return result
 }
 
+func Mean(args []float64) float64 {
+	return Add(args) / float64(len(args))
+}
+
 func getValues(args []string) ([]float64, error) {
 	var values []float64
 	for _, arg := range args {
