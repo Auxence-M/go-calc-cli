@@ -11,7 +11,7 @@ var stdDevCmd = &cobra.Command{
 	Use:     "stdDev",
 	Aliases: []string{"standardDeviation"},
 	Short:   "Standard deviation of a group of values",
-	Long:    `Calculates the standard deviation or average of a group of values and prints ot the result`,
+	Long:    `Calculates the standard deviation of a group of values and prints ot the result`,
 	Example: `zero stdDev 20.5 30 50 70
 zero standardDeviation --file data.json
 zero stdDev -- 10 5 -20 20`,
